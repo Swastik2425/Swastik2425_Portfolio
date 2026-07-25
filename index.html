@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swastik Jaiswal — Software Engineer & Full-Stack AI Developer</title>
+    <meta name="description" content="Ultra-Glossy 3D Portfolio & AI Assistant of Swastik Jaiswal - Software Engineer specializing in Full-Stack Web Development, System Design, Data Structures & Algorithms, Machine Learning, and Low-Latency Applications.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Three.js CDN for Real 3D Canvas Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <!-- Real 3D WebGL Canvas Background -->
+    <canvas id="threeCanvas"></canvas>
+
+    <!-- Custom Glowing Cursor Follower -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar glossy-glass" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="brand-logo">
+                <span class="logo-icon glossy-badge"><i class="fa-solid fa-code"></i></span>
+                <span class="logo-text">Swastik</span>
+            </a>
+
+            <nav class="nav-menu glossy-pill" id="navMenu">
+                <a href="#about" class="nav-link">About & Goals</a>
+                <a href="#skills" class="nav-link">Tech Matrix</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#achievements" class="nav-link">Certifications</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="sound-toggle glossy-btn" id="soundToggle" title="Toggle UI Sound Effects">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+
+                <a href="#contact" class="btn btn-primary btn-sm glossy-btn glowing-btn">
+                    <span>Get In Touch</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </a>
+
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="section-tag glossy-tag">
+                        <span class="status-dot pulse"></span>
+                        <span>Available for Immediate Joining & Relocation Across India</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Swastik <span class="gradient-text">Jaiswal</span>
+                    </h1>
+
+                    <p class="hero-subtitle-role">
+                        <strong>Software Engineer & Full-Stack AI Developer</strong> | System Design • Machine Learning • DSA
+                    </p>
+
+                    <p class="hero-subtitle">
+                        B.Tech IT Student at <strong>Pranveer Singh Institute of Technology (PSIT), Kanpur</strong> specializing in building scalable microservices, low-latency fintech platforms, and AI-powered real-time web applications.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary btn-lg glossy-btn glowing-btn">
+                            <span>Explore Projects</span>
+                            <i class="fa-solid fa-arrow-down-long"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero-stats glossy-card">
+                        <div class="stat-card">
+                            <h3 class="stat-number" data-target="250">0+</h3>
+                            <p class="stat-label">LeetCode & GFG Solved</p>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-card">
+                            <h3 class="stat-number" data-target="3">0</h3>
+                            <p class="stat-label">Full-Stack Flagship Projects</p>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-card">
+                            <h3 class="stat-number" data-target="4">0</h3>
+                            <p class="stat-label">AI & Tech Certifications</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Code Canvas -->
+                <div class="hero-visual">
+                    <div class="hero-canvas-mockup glossy-card tilt-card" id="codeEditorCard">
+                        <div class="canvas-header glossy-header">
+                            <div class="window-controls">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <div class="canvas-title">
+                                <i class="fa-solid fa-code color-code"></i> Swastik_System_Architecture.java
+                            </div>
+                            <div class="zoom-level">Java 17 / Node.js <i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+
+                        <div class="canvas-body code-body">
+                            <!-- Floating Badges -->
+                            <div class="figma-badge badge-swastik glossy-badge">
+                                <i class="fa-solid fa-bolt"></i> Low-Latency Systems
+                            </div>
+                            <div class="figma-badge badge-user glossy-badge">
+                                <i class="fa-solid fa-brain"></i> Machine Learning
+                            </div>
+                            <div class="figma-badge badge-code glossy-badge">
+                                <i class="fa-solid fa-microchip"></i> Microservices
+                            </div>
+
+                            <!-- Code Snippet UI -->
+                            <div class="code-editor-box glossy-box">
+                                <div class="code-line"><span class="c-keyword">public class</span> <span class="c-class">SwastikEngineer</span> {</div>
+                                <div class="code-line indent-1"><span class="c-attr">String</span> location = <span class="c-str">"Kanpur, UP, India"</span>;</div>
+                                <div class="code-line indent-1"><span class="c-attr">String</span> status = <span class="c-str">"Ready to Relocate & Scale Systems"</span>;</div>
+                                <div class="code-line indent-1"><span class="c-attr">String[]</span> coreTech = {<span class="c-str">"Java"</span>, <span class="c-str">"Python"</span>, <span class="c-str">"React"</span>, <span class="c-str">"Node"</span>, <span class="c-str">"Redis"</span>, <span class="c-str">"TensorFlow.js"</span>};</div>
+                                <div class="code-line indent-1"><br></div>
+                                <div class="code-line indent-1"><span class="c-keyword">public void</span> <span class="c-func">buildFutureGoal</span>() {</div>
+                                <div class="code-line indent-2"><span class="c-comment">// Delivering high-impact software solutions</span></div>
+                                <div class="code-line indent-2">System.out.println(<span class="c-str">"Innovating with AI & System Architecture"</span>);</div>
+                                <div class="code-line indent-1">}</div>
+                                <div class="code-line">}</div>
+                            </div>
+                        </div>
+
+                        <div class="canvas-toolbar" id="codeToolbar">
+                            <button class="tool-btn active" title="Active Engine"><i class="fa-solid fa-terminal"></i></button>
+                            <button class="tool-btn" title="Git Branch"><i class="fa-solid fa-code-branch"></i></button>
+                            <button class="tool-btn" title="Database"><i class="fa-solid fa-database"></i></button>
+                            <button class="tool-btn" title="Machine Learning"><i class="fa-solid fa-brain"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Bar -->
+        <section class="tools-bar">
+            <div class="container">
+                <p class="tools-title">MY TECHNICAL CORE & PLATFORM STACK</p>
+                <div class="tools-grid">
+                    <div class="tool-chip glossy-pill"><i class="fa-brands fa-java color-code"></i> Java</div>
+                    <div class="tool-chip glossy-pill"><i class="fa-brands fa-python color-wire"></i> Python</div>
+                    <div class="tool-chip glossy-pill"><i class="fa-solid fa-code color-motion"></i> C++</div>
+                    <div class="tool-chip glossy-pill"><i class="fa-solid fa-database color-ds"></i> SQL & MongoDB</div>
+                    <div class="tool-chip glossy-pill"><i class="fa-brands fa-react color-ux"></i> React.js</div>
+                    <div class="tool-chip glossy-pill"><i class="fa-brands fa-node-js color-mob"></i> Node.js & Express</div>
+                    <div class="tool-chip glossy-pill"><i class="fa-solid fa-bolt color-framer"></i> Socket.IO & Redis</div>
+                    <div class="tool-chip glossy-pill"><i class="fa-solid fa-brain color-ds"></i> TensorFlow.js & ML</div>
+                    <div class="tool-chip glossy-pill"><i class="fa-brands fa-aws color-wire"></i> AWS AI/ML</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Career Goals Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag glossy-tag"><i class="fa-solid fa-user"></i> ABOUT SWASTIK JAISWAL</span>
+                    <h2 class="section-title">Who I Am & My <span class="gradient-text">Future Career Goal</span></h2>
+                    <p class="section-subtitle">A problem solver dedicated to continuous learning, scalable software architecture, and real-world technology innovation.</p>
+                </div>
+
+                <div class="bento-grid">
+                    <div class="bento-card glossy-card spotlight-card tilt-card">
+                        <div class="bento-icon"><i class="fa-solid fa-bullseye"></i></div>
+                        <h3>Career Objective & Vision</h3>
+                        <p>Inspiring B.Tech IT student with strong fundamentals in Data Structures & Algorithms, System Design, and Full-Stack Web Development. Seeking an entry-level <strong>Software Engineer</strong> role where I can build real-world scalable applications, leverage Machine Learning, and contribute strong analytical problem-solving skills.</p>
+                    </div>
+
+                    <div class="bento-card glossy-card spotlight-card tilt-card">
+                        <div class="bento-icon"><i class="fa-solid fa-rocket"></i></div>
+                        <h3>Future Goals & Relocation</h3>
+                        <p>Aiming to join a high-growth tech team focused on low-latency microservices, high-volume transaction routing, and AI data extraction. <strong>Available for immediate joining</strong> and completely open to relocation across India based on business requirements.</p>
+                    </div>
+
+                    <div class="bento-card glossy-card spotlight-card tilt-card">
+                        <div class="bento-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>Problem Solving & Leadership</h3>
+                        <p>Solved <strong>250+ DSA problems</strong> across LeetCode & GeeksforGeeks. Passionate about clean code architecture, cross-functional coordination, agile task management, and debugging complex runtime bottlenecks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Creative Interactive Technical Skills Matrix Section -->
+        <section class="skills-section" id="skills">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag glossy-tag"><i class="fa-solid fa-microchip"></i> INTERACTIVE SKILLS RADAR</span>
+                    <h2 class="section-title">Creative <span class="gradient-text">Tech Competency Matrix</span></h2>
+                    <p class="section-subtitle">Hover or click any technical domain item to inspect live proficiency meters and architectural insights.</p>
+                </div>
+
+                <!-- Skill Domain Category Filter Bar -->
+                <div class="skill-category-filters glossy-pill">
+                    <button class="skill-filter-btn active" data-skill-filter="all">All Domains</button>
+                    <button class="skill-filter-btn" data-skill-filter="languages"><i class="fa-solid fa-code"></i> Languages</button>
+                    <button class="skill-filter-btn" data-skill-filter="web"><i class="fa-brands fa-react"></i> Web & APIs</button>
+                    <button class="skill-filter-btn" data-skill-filter="ai"><i class="fa-solid fa-brain"></i> AI & Data Science</button>
+                    <button class="skill-filter-btn" data-skill-filter="system"><i class="fa-solid fa-network-wired"></i> System Design</button>
+                </div>
+
+                <!-- Creative HUD Interactive Skills Grid -->
+                <div class="skills-grid" id="skillsGrid">
+
+                    <!-- Domain 1: Languages -->
+                    <div class="skill-category-card glossy-card spotlight-card tilt-card" data-domain="languages">
+                        <div class="skill-cat-header">
+                            <div class="skill-icon-badge"><i class="fa-solid fa-code color-code"></i></div>
+                            <div>
+                                <h3>Programming Languages</h3>
+                                <span class="domain-sub">Core Engineering Foundations</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-meter-list">
+                            <div class="skill-meter-item" data-insight="Java OOPs, Collections, Multithreading & Low-Latency Backends">
+                                <div class="meter-info">
+                                    <span><i class="fa-brands fa-java color-code"></i> Java</span>
+                                    <span class="meter-pct">92%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 92%; --bar-color: #E34F26;"></div></div>
+                            </div>
+
+                            <div class="skill-meter-item" data-insight="Python Scripting, Data Augmentation & Machine Learning Pipelines">
+                                <div class="meter-info">
+                                    <span><i class="fa-brands fa-python color-wire"></i> Python</span>
+                                    <span class="meter-pct">88%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 88%; --bar-color: #EAB308;"></div></div>
+                            </div>
+
+                            <div class="skill-meter-item" data-insight="Competitive Programming (250+ LeetCode/GFG Problems Solved)">
+                                <div class="meter-info">
+                                    <span><i class="fa-solid fa-code color-motion"></i> C++</span>
+                                    <span class="meter-pct">85%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 85%; --bar-color: #EC4899;"></div></div>
+                            </div>
+
+                            <div class="skill-meter-item" data-insight="Relational Query Optimization (Oracle) & Document Stores (MongoDB)">
+                                <div class="meter-info">
+                                    <span><i class="fa-solid fa-database color-ds"></i> SQL & NoSQL</span>
+                                    <span class="meter-pct">90%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 90%; --bar-color: #A855F7;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Domain 2: Full-Stack Web -->
+                    <div class="skill-category-card glossy-card spotlight-card tilt-card" data-domain="web">
+                        <div class="skill-cat-header">
+                            <div class="skill-icon-badge"><i class="fa-brands fa-react color-ux"></i></div>
+                            <div>
+                                <h3>Full-Stack & Web Systems</h3>
+                                <span class="domain-sub">Front-End & Scalable Microservices</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-meter-list">
+                            <div class="skill-meter-item" data-insight="Component Architecture, Hooks, State Management & Responsive UI">
+                                <div class="meter-info">
+                                    <span><i class="fa-brands fa-react color-ux"></i> React.js</span>
+                                    <span class="meter-pct">90%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 90%; --bar-color: #06B6D4;"></div></div>
+                            </div>
+
+                            <div class="skill-meter-item" data-insight="Express REST APIs, Middleware Routing & Asynchronous Event Loops">
+                                <div class="meter-info">
+                                    <span><i class="fa-brands fa-node-js color-mob"></i> Node.js & Express</span>
+                                    <span class="meter-pct">88%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 88%; --bar-color: #10B981;"></div></div>
+                            </div>
+
+                            <div class="skill-meter-item" data-insight="Bi-directional WebSocket Communication for Real-Time Apps (SAFEX)">
+                                <div class="meter-info">
+                                    <span><i class="fa-solid fa-bolt color-framer"></i> Socket.IO</span>
+                                    <span class="meter-pct">86%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 86%; --bar-color: #0055FF;"></div></div>
+                            </div>
+
+                            <div class="skill-meter-item" data-insight="In-Memory Session Caching & Message Queue Throughput Optimization">
+                                <div class="meter-info">
+                                    <span><i class="fa-solid fa-memory color-code"></i> Redis Caching</span>
+                                    <span class="meter-pct">84%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 84%; --bar-color: #E34F26;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Domain 3: AI & ML -->
+                    <div class="skill-category-card glossy-card spotlight-card tilt-card" data-domain="ai">
+                        <div class="skill-cat-header">
+                            <div class="skill-icon-badge"><i class="fa-solid fa-brain color-motion"></i></div>
+                            <div>
+                                <h3>AI & Machine Learning</h3>
+                                <span class="domain-sub">Intelligent Automated Systems</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-meter-list">
+                            <div class="skill-meter-item" data-insight="Real-time Client Side Toxicity Moderation Model Integration">
+                                <div class="meter-info">
+                                    <span><i class="fa-solid fa-microchip color-motion"></i> TensorFlow.js</span>
+                                    <span class="meter-pct">85%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 85%; --bar-color: #EC4899;"></div></div>
+                            </div>
+
+                            <div class="skill-meter-item" data-insight="Classification, Regression, Neural Networks & Data Preprocessing">
+                                <div class="meter-info">
+                                    <span><i class="fa-solid fa-network-wired color-ds"></i> Machine Learning</span>
+                                    <span class="meter-pct">86%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 86%; --bar-color: #A855F7;"></div></div>
+                            </div>
+
+                            <div class="skill-meter-item" data-insight="AWS AI/ML Certified in Developing Generative AI & Security Compliance">
+                                <div class="meter-info">
+                                    <span><i class="fa-brands fa-aws color-wire"></i> Generative AI & AWS</span>
+                                    <span class="meter-pct">88%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 88%; --bar-color: #EAB308;"></div></div>
+                            </div>
+
+                            <div class="skill-meter-item" data-insight="Data Augmentation, Extraction, Feature Engineering & Cleaning">
+                                <div class="meter-info">
+                                    <span><i class="fa-solid fa-chart-pie color-ux"></i> Data Processing</span>
+                                    <span class="meter-pct">87%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 87%; --bar-color: #06B6D4;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Domain 4: System Design & CS Core -->
+                    <div class="skill-category-card glossy-card spotlight-card tilt-card" data-domain="system">
+                        <div class="skill-cat-header">
+                            <div class="skill-icon-badge"><i class="fa-solid fa-network-wired color-ds"></i></div>
+                            <div>
+                                <h3>System Design & CS Core</h3>
+                                <span class="domain-sub">High-Volume Architecture</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-meter-list">
+                            <div class="skill-meter-item" data-insight="Arrays, Linked Lists, Trees, Graphs, DP & Algorithmic Optimization">
+                                <div class="meter-info">
+                                    <span><i class="fa-solid fa-diagram-project color-code"></i> Data Structures (DSA)</span>
+                                    <span class="meter-pct">92%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 92%; --bar-color: #E34F26;"></div></div>
+                            </div>
+
+                            <div class="skill-meter-item" data-insight="TradeX High-Frequency Trading Slippage Optimization & Latency Tuning">
+                                <div class="meter-info">
+                                    <span><i class="fa-solid fa-gauge-high color-mob"></i> Low-Latency Systems</span>
+                                    <span class="meter-pct">89%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 89%; --bar-color: #10B981;"></div></div>
+                            </div>
+
+                            <div class="skill-meter-item" data-insight="ACID Transactions, Indexing, Process Scheduling & Memory Management">
+                                <div class="meter-info">
+                                    <span><i class="fa-solid fa-server color-framer"></i> DBMS & Operating Systems</span>
+                                    <span class="meter-pct">90%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 90%; --bar-color: #0055FF;"></div></div>
+                            </div>
+
+                            <div class="skill-meter-item" data-insight="TCP/IP, HTTP/2, Secure Transaction Routing & Network Security">
+                                <div class="meter-info">
+                                    <span><i class="fa-solid fa-shield-halved color-ux"></i> Computer Networks</span>
+                                    <span class="meter-pct">88%</span>
+                                </div>
+                                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 88%; --bar-color: #06B6D4;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Dynamic Tech Insight Toast / Tooltip Display -->
+                <div class="skill-insight-box glossy-card text-center" id="skillInsightBox">
+                    <i class="fa-solid fa-lightbulb color-wire"></i>
+                    <span id="insightText">Hover over any technical competency above to inspect Swastik's architectural application!</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="work-section" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="section-tag glossy-tag"><i class="fa-solid fa-laptop-code"></i> REAL-WORLD PROJECTS</span>
+                        <h2 class="section-title">Swastik's <span class="gradient-text">Flagship Software Projects</span></h2>
+                    </div>
+
+                    <div class="project-filters">
+                        <button class="filter-btn active glossy-pill" data-filter="all">All Projects</button>
+                        <button class="filter-btn glossy-pill" data-filter="ai">AI & Microservices</button>
+                        <button class="filter-btn glossy-pill" data-filter="fintech">Fintech & Scaling</button>
+                        <button class="filter-btn glossy-pill" data-filter="fullstack">Full-Stack Web</button>
+                    </div>
+                </div>
+
+                <div class="projects-grid" id="projectsGrid">
+                    <div class="project-card glossy-card spotlight-card tilt-card" data-category="ai" data-project="safex">
+                        <div class="project-image-wrapper">
+                            <div class="project-tag glossy-badge">Microservices & AI Moderation</div>
+                            <div class="project-visual p-bg-1">
+                                <img src="assets/safex.png" alt="SAFEX Real-Time Chat Platform" class="project-img-full">
+                            </div>
+                        </div>
+
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Jun 2026 – Present</span>
+                                <span><i class="fa-solid fa-bolt"></i> Socket.IO + Redis</span>
+                            </div>
+                            <h3 class="project-title">SAFEX — Microservices Real-Time Chat Application</h3>
+                            <p class="project-desc">Developed a secure, real-time messaging platform using React.js, Node.js, MongoDB, Socket.IO, Redis, and a unique <strong>TensorFlow.js AI moderation layer</strong> that detects and blocks toxic language in real-time.</p>
+                            
+                            <div class="project-tags">
+                                <span>React.js</span>
+                                <span>Node.js</span>
+                                <span>Socket.IO</span>
+                                <span>Redis</span>
+                                <span>TensorFlow.js</span>
+                            </div>
+
+                            <button class="btn btn-outline btn-block glossy-btn open-modal-btn" data-modal="safex">
+                                <span>View Technical Specs</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="project-card glossy-card spotlight-card tilt-card" data-category="fintech" data-project="tradex">
+                        <div class="project-image-wrapper">
+                            <div class="project-tag glossy-badge">Fintech & High-Frequency Trading</div>
+                            <div class="project-visual p-bg-2">
+                                <img src="assets/tradex.png" alt="TradeX Real-Time Fintech Platform" class="project-img-full">
+                            </div>
+                        </div>
+
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Jan 2026</span>
+                                <span><i class="fa-solid fa-chart-line"></i> Low-Latency Trading</span>
+                            </div>
+                            <h3 class="project-title">TradeX — Real-Time Fintech Platform</h3>
+                            <p class="project-desc">Designed a high-performance trading platform for high-frequency scalping trading and short-term digital options. Optimized for ultra-low latency and high-volume data handling to minimize slippage.</p>
+                            
+                            <div class="project-tags">
+                                <span>System Design</span>
+                                <span>Low-Latency</span>
+                                <span>High-Volume Trading</span>
+                                <span>Real-Time Analytics</span>
+                            </div>
+
+                            <button class="btn btn-outline btn-block glossy-btn open-modal-btn" data-modal="tradex">
+                                <span>View Technical Specs</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="project-card glossy-card spotlight-card tilt-card" data-category="fullstack" data-project="likhajhoka">
+                        <div class="project-image-wrapper">
+                            <div class="project-tag glossy-badge">Full-Stack Digital Ledger</div>
+                            <div class="project-visual p-bg-3">
+                                <img src="assets/likhajhoka.jpg" alt="Likhajhoka — Digital Ledger System" class="project-img-full">
+                            </div>
+                        </div>
+
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Aug 2025</span>
+                                <span><i class="fa-solid fa-book-bookmark"></i> SMB Digital Bahi Khata</span>
+                            </div>
+                            <h3 class="project-title">Likhajhoka — Digital Ledger System</h3>
+                            <p class="project-desc">Developed a full-stack digital ledger system to digitize traditional Indian <em>bahi khata</em> (ledger books) for small businesses with secure credit/debit transaction tracking and physical record replacement.</p>
+                            
+                            <div class="project-tags">
+                                <span>Full-Stack Web</span>
+                                <span>Transaction Routing</span>
+                                <span>Financial Digitization</span>
+                                <span>Database Security</span>
+                            </div>
+
+                            <button class="btn btn-outline btn-block glossy-btn open-modal-btn" data-modal="likhajhoka">
+                                <span>View Technical Specs</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education-section" id="education">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag glossy-tag"><i class="fa-solid fa-graduation-cap"></i> ACADEMIC BACKGROUND</span>
+                    <h2 class="section-title">Education & <span class="gradient-text">Qualifications</span></h2>
+                    <p class="section-subtitle">Academic journey establishing strong IT software engineering foundations.</p>
+                </div>
+
+                <div class="education-timeline">
+                    <div class="edu-card glossy-card spotlight-card tilt-card">
+                        <div class="edu-badge glossy-badge">2023 – 2027</div>
+                        <div class="edu-details">
+                            <h3>B.Tech in Information Technology (IT)</h3>
+                            <h4 class="edu-inst"><i class="fa-solid fa-building-columns"></i> Pranveer Singh Institute of Technology (PSIT), Kanpur</h4>
+                            <p>Specializing in Data Structures & Algorithms, Java, Python, Web Engineering, Machine Learning, System Design, Operating Systems, and Computer Networks.</p>
+                        </div>
+                    </div>
+
+                    <div class="edu-card glossy-card spotlight-card tilt-card">
+                        <div class="edu-badge glossy-badge">2022</div>
+                        <div class="edu-details">
+                            <h3>Intermediate (Class XII)</h3>
+                            <h4 class="edu-inst"><i class="fa-solid fa-school"></i> SS Public School, Kolkata (W.B)</h4>
+                            <p>Senior Secondary Science curriculum focusing on Physics, Chemistry, and Mathematics (PCM).</p>
+                        </div>
+                    </div>
+
+                    <div class="edu-card glossy-card spotlight-card tilt-card">
+                        <div class="edu-badge glossy-badge">2020</div>
+                        <div class="edu-details">
+                            <h3>High School (Class X)</h3>
+                            <h4 class="edu-inst"><i class="fa-solid fa-school"></i> Children College, Azamgarh (U.P)</h4>
+                            <p>Secondary School curriculum with strong fundamentals in Mathematics and Science.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="achievements-section" id="achievements">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag glossy-tag"><i class="fa-solid fa-award"></i> HONORS & CREDENTIALS</span>
+                    <h2 class="section-title">Certifications & <span class="gradient-text">Coding Milestones</span></h2>
+                </div>
+
+                <div class="achievements-grid">
+                    <div class="achieve-card glossy-card spotlight-card tilt-card">
+                        <div class="achieve-icon"><i class="fa-solid fa-code-compare"></i></div>
+                        <h3>Competitive Programming</h3>
+                        <p class="achieve-badge">250+ Problems Solved</p>
+                        <p>Active problem solver on <strong>LeetCode & GeeksforGeeks (GFG)</strong> focused on algorithmic efficiency, dynamic programming, trees, and graphs.</p>
+                    </div>
+
+                    <div class="achieve-card glossy-card spotlight-card tilt-card">
+                        <div class="achieve-icon"><i class="fa-brands fa-aws"></i></div>
+                        <h3>AWS Training & Certification (AI/ML)</h3>
+                        <p class="achieve-badge">Generative AI & ML Security</p>
+                        <p>Certified in Developing Generative AI Solutions, Fundamentals of Machine Learning, Security, Compliance, and Governance for AI Solutions.</p>
+                    </div>
+
+                    <div class="achieve-card glossy-card spotlight-card tilt-card">
+                        <div class="achieve-icon"><i class="fa-solid fa-certificate"></i></div>
+                        <h3>Infosys Springboard Certifications</h3>
+                        <p class="achieve-badge">Python & Web Tech</p>
+                        <p>Certified in Python Fundamentals (I & II) and Web Technologies (HTML5, CSS3, JavaScript) by Infosys Springboard.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="contact-card glossy-card spotlight-card">
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <span class="section-tag glossy-tag"><i class="fa-solid fa-paper-plane"></i> GET IN TOUCH</span>
+                            <h2 class="contact-title">Let's build something <span class="gradient-text">extraordinary.</span></h2>
+                            <p class="contact-desc">Seeking Software Engineering, Full-Stack, or AI/ML roles. Open to relocation across India and ready for immediate onboarding.</p>
+
+                            <div class="contact-details">
+                                <div class="c-detail-item glossy-pill">
+                                    <div class="c-icon"><i class="fa-regular fa-envelope"></i></div>
+                                    <div>
+                                        <span>Direct Email</span>
+                                        <h4 id="emailText">swastik0595@gmail.com</h4>
+                                    </div>
+                                    <button class="copy-btn" id="copyEmailBtn" title="Copy Email"><i class="fa-regular fa-copy"></i></button>
+                                </div>
+
+                                <div class="c-detail-item glossy-pill">
+                                    <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
+                                    <div>
+                                        <span>Phone Number</span>
+                                        <h4>+91 7275059519</h4>
+                                    </div>
+                                </div>
+
+                                <div class="c-detail-item glossy-pill">
+                                    <div class="c-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                    <div>
+                                        <span>Current Location</span>
+                                        <h4>Kanpur, Uttar Pradesh, India</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="social-links">
+                                <a href="https://linkedin.com/in/swastik2425" target="_blank" class="social-btn glossy-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="https://github.com/Swastik2425" target="_blank" class="social-btn glossy-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <form class="contact-form" id="contactForm">
+                            <h3>Send Swastik a Message</h3>
+                            
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" placeholder="Recruiter / Hiring Manager" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" placeholder="hr@company.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service">Opportunity Type</label>
+                                <select id="service" class="glossy-select" required>
+                                    <option value="sde">Full-Time Software Engineer (SDE)</option>
+                                    <option value="fullstack">Full-Stack / Web Developer</option>
+                                    <option value="ai-ml">AI / Machine Learning Engineer</option>
+                                    <option value="internship">Engineering Internship</option>
+                                    <option value="other">Other Role</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message Details</label>
+                                <textarea id="message" rows="4" placeholder="Share role details, team requirements, or interview schedule..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block glossy-btn glowing-btn">
+                                <span>Send Direct Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+
+                            <div class="form-toast" id="formToast">
+                                <i class="fa-solid fa-circle-check"></i> Thank you! Message sent to Swastik Jaiswal successfully.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2026 Swastik Jaiswal. Engineered with <i class="fa-solid fa-heart color-heart"></i> & Swastik AI Engine.</p>
+            <div class="footer-links">
+                <a href="#hero">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Technical Specs Modal -->
+    <div class="modal-overlay" id="caseStudyModal">
+        <div class="modal-container glossy-card spotlight-card">
+            <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Live Floating Swastik AI Assistant Trigger Badge -->
+    <div class="ai-floating-trigger glossy-pill" id="aiFloatingTrigger">
+        <div class="ai-trigger-pulse"></div>
+        <i class="fa-solid fa-robot"></i>
+        <span>Ask Swastik</span>
+    </div>
+
+    <!-- Glossy AI Assistant Chat Window -->
+    <div class="ai-chat-window glossy-card" id="aiChatWindow">
+        <div class="ai-chat-header glossy-header">
+            <div class="ai-bot-info">
+                <div class="ai-bot-avatar"><i class="fa-solid fa-brain"></i></div>
+                <div>
+                    <h4>Swastik AI Assistant</h4>
+                    <span>Online • Instant Resume Oracle</span>
+                </div>
+            </div>
+            <button class="ai-chat-close" id="aiChatClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="ai-chat-body" id="aiChatBody">
+            <div class="ai-msg bot">
+                <p>👋 Hello! I am <strong>Swastik's AI Assistant</strong>. Ask me anything about Swastik's projects, tech stack, DSA achievements, or availability for hiring!</p>
+            </div>
+        </div>
+
+        <!-- Quick Prompts -->
+        <div class="ai-quick-prompts">
+            <button class="ai-prompt-chip" data-prompt="skills">🚀 Top Skills & Tech Stack</button>
+            <button class="ai-prompt-chip" data-prompt="safex">🤖 SAFEX Real-Time AI Chat</button>
+            <button class="ai-prompt-chip" data-prompt="tradex">📈 TradeX Fintech Platform</button>
+            <button class="ai-prompt-chip" data-prompt="hiring">🎯 Hiring & Availability</button>
+        </div>
+
+        <form class="ai-chat-input-area" id="aiChatForm">
+            <input type="text" id="aiInput" placeholder="Ask Swastik AI a question..." required autocomplete="off">
+            <button type="submit" class="ai-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
