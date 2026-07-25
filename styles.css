@@ -385,8 +385,9 @@ body.cursor-hover .cursor-follower {
 .achieve-badge { font-size: 0.85rem; color: var(--purple-accent); font-weight: 700; margin-bottom: 0.9rem; }
 .achieve-card p { color: var(--text-secondary); font-size: 0.94rem; line-height: 1.65; }
 
-.contact-card.spotlight-card { overflow: visible !important; }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.8rem; overflow: visible !important; }
+.contact-section { padding: 8rem 0 10rem; }
+.contact-card { padding: 4.5rem 4.8rem !important; overflow: visible !important; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; overflow: visible !important; }
 .contact-title { font-size: 3rem; margin-bottom: 1.4rem; }
 .contact-desc { color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 1.1rem; }
 .contact-details { display: flex; flex-direction: column; gap: 1.8rem; margin-bottom: 2.5rem; }
