@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initAudioUnlock();
+    initMobileMenu();
     initAiAssistant();
     initSkillFilters();
     initSkillMeters();
@@ -550,6 +551,27 @@ function initNavbarScroll() {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
+        }
+    });
+}
+
+function initMobileMenu() {
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (!mobileToggle || !navMenu) return;
+
+    mobileToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => navMenu.classList.remove('active'));
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+            navMenu.classList.remove('active');
         }
     });
 }

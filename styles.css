@@ -513,6 +513,24 @@ input, select, textarea, button {
 @media (max-width: 768px) {
     .container { padding: 0 1.2rem; }
     .nav-menu { display: none; }
+    .nav-menu.active {
+        display: flex !important;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 1.2rem;
+        right: 1.2rem;
+        flex-direction: column;
+        padding: 1.2rem;
+        background: rgba(10, 14, 26, 0.96);
+        backdrop-filter: blur(28px);
+        -webkit-backdrop-filter: blur(28px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: var(--radius-md);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        gap: 0.8rem;
+        text-align: center;
+    }
     .mobile-toggle { display: block; }
     .hero-title { font-size: 2.2rem; }
     .hero-subtitle-role { font-size: 0.95rem; }
