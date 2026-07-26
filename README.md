@@ -2,7 +2,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Swastik%20Jaiswal-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/swastik2425)
 [![GitHub](https://img.shields.io/badge/GitHub-Swastik2425-181717?style=for-the-badge&logo=github)](https://github.com/Swastik2425)
-[![Portfolio Live](https://img.shields.io/badge/Live%20Portfolio-Swastik--Portfolio-06B6D4?style=for-the-badge&logo=vercel)](http://127.0.0.1:3000)
+[![Portfolio Live](https://img.shields.io/badge/Live%20Portfolio-Swastik--Portfolio-06B6D4?style=for-the-badge&logo=vercel)](https://swastik2425-portfolio.vercel.app/)
 
 Welcome to the official repository for my 3D Liquid Glassmorphic Portfolio Website. I am a passionate **Software Engineer & Full-Stack AI Developer** specializing in building scalable microservices, low-latency fintech platforms, and AI-powered web applications.
 
